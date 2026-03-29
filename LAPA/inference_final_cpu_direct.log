@@ -1,0 +1,31 @@
+START
+/venv/lapa/lib/python3.10/site-packages/google/api_core/_python_version_support.py:275: FutureWarning: You are using a Python version (3.10.20) which Google will stop supporting in new releases of google.api_core once it reaches its end of life (2026-10-04). Please upgrade to the latest Python version, or at least Python 3.11, to continue receiving updates for google.api_core past that date.
+  warnings.warn(message, FutureWarning)
+/venv/lapa/lib/python3.10/site-packages/google/api_core/_python_version_support.py:275: FutureWarning: You are using a Python version (3.10.20) which Google will stop supporting in new releases of google.cloud.storage_control_v2 once it reaches its end of life (2026-10-04). Please upgrade to the latest Python version, or at least Python 3.11, to continue receiving updates for google.cloud.storage_control_v2 past that date.
+  warnings.warn(message, FutureWarning)
+Traceback (most recent call last):
+  File "/venv/lapa/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/venv/lapa/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/workspace/LAPA/latent_pretraining/inference.py", line 71, in <module>
+    lapa = LAPAInference(
+  File "/workspace/LAPA/latent_pretraining/inference.py", line 25, in __init__
+    self.model = DeltaSampler(FLAGS=flags)
+  File "/workspace/LAPA/latent_pretraining/sampler_latent_pretrain.py", line 30, in __init__
+    self._load_model()
+  File "/workspace/LAPA/latent_pretraining/sampler_latent_pretrain.py", line 124, in _load_model
+    _, self.params = StreamingCheckpointer.load_trainstate_checkpoint(
+  File "/venv/lapa/lib/python3.10/site-packages/tux/checkpoint.py", line 216, in load_trainstate_checkpoint
+    restored_params = cls.load_checkpoint(
+  File "/venv/lapa/lib/python3.10/site-packages/tux/checkpoint.py", line 138, in load_checkpoint
+    tensor = from_bytes(None, value)
+  File "/venv/lapa/lib/python3.10/site-packages/flax/serialization.py", line 425, in from_bytes
+    state_dict = msgpack_restore(encoded_bytes)
+  File "/venv/lapa/lib/python3.10/site-packages/flax/serialization.py", line 409, in msgpack_restore
+    return _unchunk_array_leaves_in_place(state_dict)
+  File "/venv/lapa/lib/python3.10/site-packages/flax/serialization.py", line 359, in _unchunk_array_leaves_in_place
+    return _unchunk(d)
+  File "/venv/lapa/lib/python3.10/site-packages/flax/serialization.py", line 336, in _unchunk
+    flatarr = np.concatenate(_dict_to_tuple(data['chunks']))
+KeyboardInterrupt

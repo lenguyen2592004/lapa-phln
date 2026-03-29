@@ -1,0 +1,6 @@
+-r requirements.txt
+
+# Optional GPU extras for CUDA 12.x environments
+jax[cuda12]==0.4.23 --find-links https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
+tensorflow[and-cuda]==2.15.1; python_version < "3.12"
+tensorflow[and-cuda]>=2.16,<2.18; python_version >= "3.12"

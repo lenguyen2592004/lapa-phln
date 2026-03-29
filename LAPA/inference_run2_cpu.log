@@ -1,0 +1,42 @@
+START
+/venv/lapa/lib/python3.10/site-packages/google/api_core/_python_version_support.py:275: FutureWarning: You are using a Python version (3.10.20) which Google will stop supporting in new releases of google.api_core once it reaches its end of life (2026-10-04). Please upgrade to the latest Python version, or at least Python 3.11, to continue receiving updates for google.api_core past that date.
+  warnings.warn(message, FutureWarning)
+/venv/lapa/lib/python3.10/site-packages/google/api_core/_python_version_support.py:275: FutureWarning: You are using a Python version (3.10.20) which Google will stop supporting in new releases of google.cloud.storage_control_v2 once it reaches its end of life (2026-10-04). Please upgrade to the latest Python version, or at least Python 3.11, to continue receiving updates for google.cloud.storage_control_v2 past that date.
+  warnings.warn(message, FutureWarning)
+jax.errors.SimplifiedTraceback: For simplicity, JAX has removed its internal frames from the traceback of the following exception. Set JAX_TRACEBACK_FILTERING=off to include these.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/venv/lapa/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/venv/lapa/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/workspace/LAPA/latent_pretraining/inference.py", line 96, in <module>
+    latent_action = lapa.inference(image, instruction)
+  File "/workspace/LAPA/latent_pretraining/inference.py", line 35, in inference
+    latent_output = self.model(prompts)
+  File "/workspace/LAPA/latent_pretraining/sampler_latent_pretrain.py", line 221, in __call__
+    latent_output = self.generate_video_pred(prompts=[text_prompt], images=batch['input_ids'], max_input_length=128)
+  File "/workspace/LAPA/latent_pretraining/sampler_latent_pretrain.py", line 210, in generate_video_pred
+    delta_output, sharded_rng = self._forward_generate(
+  File "/workspace/LAPA/latent_pretraining/sampler_latent_pretrain.py", line 154, in fn
+    text_output = self.model.generate(
+  File "/venv/lapa/lib/python3.10/site-packages/transformers/generation/flax_utils.py", line 417, in generate
+    return self._greedy_search(
+  File "/venv/lapa/lib/python3.10/site-packages/transformers/generation/flax_utils.py", line 636, in _greedy_search
+    state = greedy_search_body_fn(state)
+  File "/venv/lapa/lib/python3.10/site-packages/transformers/generation/flax_utils.py", line 612, in greedy_search_body_fn
+    model_outputs = model(state.running_token, params=params, **state.model_kwargs)
+  File "/workspace/LAPA/latent_pretraining/delta_llama.py", line 242, in __call__
+    outputs = self.module.apply(
+  File "/workspace/LAPA/latent_pretraining/delta_llama.py", line 436, in __call__
+    outputs = self.transformer(
+  File "/workspace/LAPA/latent_pretraining/delta_llama.py", line 336, in __call__
+    input_text_embeds = self.wte(jnp.where(vision_masks, 0, input_ids))
+  File "/venv/lapa/lib/python3.10/site-packages/flax/linen/linear.py", line 771, in setup
+    self.embedding = self.param('embedding',
+flax.errors.ScopeParamNotFoundError: Could not find parameter named "embedding" in scope "/transformer/wte". (https://flax.readthedocs.io/en/latest/api_reference/flax.errors.html#flax.errors.ScopeParamNotFoundError)
+ERROR conda.cli.main_run:execute(142): `conda run python -m latent_pretraining.inference` failed. (See above for error)
+EXIT_CODE:1
+END

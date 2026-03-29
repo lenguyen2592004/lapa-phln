@@ -1,0 +1,12 @@
+root         452       1  0 16:06 ?        00:00:01 /usr/bin/python3 /usr/local/bin/jupyter-notebook --no-browser --ContentsManager.allow_hidden=True --ServerApp.root_dir=/ --ServerApp.preferred_dir=/ --ip=0.0.0.0 --port=8080 --NotebookApp.open_browser=False --NotebookApp.token=df2dc54ba9a95ac67454c89460ea06fc2d33bd91a37fb9b28d1dda3697f614e7 --NotebookApp.allow_remote_access=True --NotebookApp.allow_origin=* --NotebookApp.certfile=/etc/instance.crt --NotebookApp.keyfile=/etc/instance.key --allow-root
+root         551     373  0 16:06 ?        00:00:00 /usr/bin/python3 /usr/local/bin/supervisord -n -u root -c /etc/supervisor/supervisord.conf
+root         570     559  0 16:06 ?        00:00:00 python3 /usr/local/bin/log-tee /var/log/portal/cron.log
+root         571     558  0 16:06 ?        00:00:00 python3 /usr/local/bin/log-tee /var/log/portal/caddy.log
+root         574     560  0 16:06 ?        00:00:00 python3 /usr/local/bin/log-tee /var/log/portal/instance_portal.log
+user         583     563  0 16:06 ?        00:00:00 python3 /usr/local/bin/log-tee /var/log/portal/syncthing.log
+root         586     565  0 16:06 ?        00:00:00 python3 /usr/local/bin/log-tee /var/log/portal/tensorboard.log
+root         596     567  0 16:06 ?        00:00:00 python3 /usr/local/bin/log-tee /var/log/portal/tunnel_manager.log
+root         676     662  0 16:06 pts/0    00:00:05 /opt/portal-aio/venv/bin/python3 /opt/portal-aio/venv/bin/fastapi run --host 127.0.0.1 --port 11111 portal.py
+root         681     667  0 16:06 pts/1    00:00:03 /usr/bin/python3 /usr/local/bin/tensorboard --port 16006 --logdir /workspace
+root         688     669  0 16:06 pts/2    00:00:02 /opt/portal-aio/venv/bin/python3 /opt/portal-aio/venv/bin/fastapi run --host 127.0.0.1 --port 11112 tunnel_manager.py
+root         792     681  0 16:06 pts/1    00:00:01 /usr/local/lib/python3.12/dist-packages/tensorboard_data_server/bin/server --logdir=/workspace --reload=5 --samples-per-plugin= --port=0 --port-file=/tmp/tensorboard_data_server_h9ihgmym/port --die-after-stdin --error-file=/tmp/tensorboard_data_server_h9ihgmym/startup_error

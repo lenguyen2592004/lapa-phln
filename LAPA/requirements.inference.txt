@@ -1,0 +1,20 @@
+git+https://github.com/lhao499/tux.git
+flax==0.7.0
+optax==0.1.7
+chex==0.1.82
+einops
+transformers==4.29.2; python_version < "3.12"
+transformers>=4.41,<4.48; python_version >= "3.12"
+tqdm
+ml_collections
+requests
+typing-extensions
+sentencepiece
+Pillow
+imageio[ffmpeg]
+decord
+tiktoken
+jax==0.4.23
+jaxlib==0.4.23
+scipy==1.12.0
+albumentations

@@ -1,0 +1,12 @@
+{
+  "mode": "mock",
+  "instruction": "move the object",
+  "input_image": "imgs/bridge_inference.jpg",
+  "tokens": [
+    5,
+    2,
+    6,
+    1
+  ],
+  "token_count": 4
+}
